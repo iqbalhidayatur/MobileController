@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobile Game Controller</string>
+    <string name="connect_title">Connect to PC</string>
+    <string name="ip_address">IP Address</string>
+    <string name="port">Port</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connecting">Connecting…</string>
+    <string name="reconnecting">Reconnecting…</string>
+    <string name="settings">Settings</string>
+    <string name="recent_connections">Recent Connections</string>
+    <string name="latency">Latency</string>
+    <string name="ms">ms</string>
+    <string name="analog_sensitivity">Analog Sensitivity</string>
+    <string name="analog_deadzone">Analog Deadzone</string>
+    <string name="vibration">Vibration</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="invalid_ip">Invalid IP address</string>
+    <string name="invalid_port">Port must be between 1 and 65535</string>
+    <string name="connection_failed">Connection failed</string>
+</resources>
