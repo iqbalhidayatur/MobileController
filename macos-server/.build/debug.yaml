@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "MobileGameControllerMac-arm64-apple-macosx-debug.exe": ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe>"]
+  "MobileGameControllerMac-arm64-apple-macosx-debug.module": ["<MobileGameControllerMac-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe>","<MobileGameControllerMac-arm64-apple-macosx-debug.module>"]
+  "test": ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe>","<MobileGameControllerMac-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac":
+    is-mutated: true
+commands:
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist"]
+    description: "Write auxiliary file /Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist"
+
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources"]
+    description: "Write auxiliary file /Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources"
+
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList"
+
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<MobileGameControllerMac-arm64-apple-macosx-debug.exe>":
+    tool: phony
+    inputs: ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    outputs: ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe>"]
+
+  "<MobileGameControllerMac-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule"]
+    outputs: ["<MobileGameControllerMac-arm64-apple-macosx-debug.module>"]
+
+  "C.MobileGameControllerMac-arm64-apple-macosx-debug.exe":
+    tool: shell
+    inputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/MobileGameControllerMac"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug","-o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac","-module-name","MobileGameControllerMac","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_MobileGameControllerMac_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g"]
+
+  "C.MobileGameControllerMac-arm64-apple-macosx-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist"]
+    outputs: ["<MobileGameControllerMac-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/MobileGameControllerMac"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac"]
+
+  "C.MobileGameControllerMac-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources"]
+    outputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule"]
+    description: "Compiling Swift Module 'MobileGameControllerMac' (6 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","MobileGameControllerMac","-emit-dependencies","-emit-module","-emit-module-path","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule","-output-file-map","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/output-file-map.json","-incremental","-c","@/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources","-I","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","MobileGameControllerMac_main","-color-diagnostics","-swift-version","5","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","macos_server"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/","/Users/apple/Documents/GitHub/MobileController/macos-server/Package.swift","/Users/apple/Documents/GitHub/MobileController/macos-server/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

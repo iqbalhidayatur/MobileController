@@ -1,0 +1,188 @@
+<Window x:Class="MobileGameControllerDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mobile Game Controller"
+        Height="720"
+        Width="920"
+        MinHeight="600"
+        MinWidth="760"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="220"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="Mobile Game Controller"
+                       FontSize="28"
+                       FontWeight="Bold"/>
+            <TextBlock Text="Desktop server for Android controller app"
+                       Foreground="{StaticResource MutedTextBrush}"
+                       Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <!-- Status + controls -->
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Background="{StaticResource SurfaceBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Padding="18">
+                <StackPanel>
+                    <TextBlock Text="Server Status"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               FontSize="12"/>
+                    <TextBlock Text="{Binding StatusText}"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding StatusDetail}"
+                               TextWrapping="Wrap"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               Margin="0,8,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                        <TextBlock Text="Connected client:"
+                                   Foreground="{StaticResource MutedTextBrush}"/>
+                        <TextBlock Text="{Binding ConnectedClient}"
+                                   Margin="8,0,0,0"
+                                   FontWeight="SemiBold"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Grid.Column="1"
+                        Margin="16,0,0,0"
+                        VerticalAlignment="Center"
+                        Width="180">
+                <TextBlock Text="Port"
+                           Foreground="{StaticResource MutedTextBrush}"
+                           Margin="0,0,0,6"/>
+                <TextBox Text="{Binding PortText, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding IsPortEnabled}"
+                         Width="180"
+                         Margin="0,0,0,12"/>
+                <Button Content="{Binding PrimaryButtonText}"
+                        Command="{Binding ToggleServerCommand}"
+                        Width="180"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Connection info -->
+        <Border Grid.Row="2"
+                Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="18"
+                Margin="0,0,0,20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Connect from Android"
+                           FontSize="18"
+                           FontWeight="SemiBold"/>
+
+                <TextBlock Grid.Row="1"
+                           Margin="0,10,0,16"
+                           TextWrapping="Wrap"
+                           Foreground="{StaticResource MutedTextBrush}"
+                           Text="1. Make sure phone and PC are on the same WiFi.&#10;2. Start the server here.&#10;3. In the Android app, enter the address below and tap Connect."/>
+
+                <Grid Grid.Row="2" Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Local IP"
+                               VerticalAlignment="Center"
+                               Margin="0,0,12,0"/>
+                    <ComboBox Grid.Column="1"
+                              ItemsSource="{Binding LocalAddresses}"
+                              SelectedItem="{Binding SelectedAddress}"
+                              MinWidth="220"
+                              Padding="8,6"/>
+                    <Button Grid.Column="2"
+                            Content="Refresh"
+                            Command="{Binding RefreshAddressesCommand}"
+                            Margin="12,0,0,0"
+                            Background="{StaticResource SurfaceBrush}"
+                            Foreground="{StaticResource TextBrush}"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Background="#FF161616"
+                            BorderBrush="{StaticResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Address for Android app"
+                                       Foreground="{StaticResource MutedTextBrush}"
+                                       FontSize="12"/>
+                            <TextBlock Text="{Binding FullConnectionAddress}"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource AccentBrush}"
+                                       Margin="0,6,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Button Grid.Column="1"
+                            Content="Copy Address"
+                            Command="{Binding CopyAddressCommand}"
+                            Margin="12,0,0,0"
+                            VerticalAlignment="Stretch"
+                            MinWidth="130"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Log -->
+        <Border Grid.Row="3"
+                Background="{StaticResource SurfaceBrush}"
+                BorderBrush="{StaticResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="18">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Activity Log"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,10"/>
+                <ListBox Grid.Row="1"
+                         ItemsSource="{Binding LogEntries}"
+                         Background="#FF161616"
+                         BorderBrush="{StaticResource BorderBrush}"
+                         BorderThickness="1"
+                         Foreground="{StaticResource MutedTextBrush}"
+                         FontFamily="Consolas"
+                         FontSize="12"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

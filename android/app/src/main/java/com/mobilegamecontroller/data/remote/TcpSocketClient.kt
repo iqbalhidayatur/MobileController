@@ -2,6 +2,7 @@ package com.mobilegamecontroller.data.remote
 
 import com.mobilegamecontroller.di.IoDispatcher
 import com.mobilegamecontroller.domain.model.ConnectionState
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -11,6 +12,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -58,6 +61,9 @@ class TcpSocketClient @Inject constructor(
     /** Pending ping timestamp for RTT calculation. */
     private var pendingPingTime = 0L
 
+    /** Serializes all socket writes; BufferedWriter is not thread-safe. */
+    private val writeMutex = Mutex()
+
     suspend fun connect(host: String, port: Int, scope: CoroutineScope): Result<Unit> =
         withContext(ioDispatcher) {
             userDisconnect = false
@@ -96,21 +102,23 @@ class TcpSocketClient @Inject constructor(
     }
 
     /**
-     * Send raw JSON line to server. Thread-safe via IO dispatcher.
-     * Uses flush() immediately for button events; analog may batch.
+     * Send raw JSON line to server. Serialized via [writeMutex] because
+     * press/release and ping can otherwise corrupt the same BufferedWriter.
      */
     suspend fun send(message: String, flushImmediately: Boolean = true): Result<Unit> =
         withContext(ioDispatcher) {
-            try {
-                val w = writer ?: return@withContext Result.failure(IOException("Not connected"))
-                w.write(message)
-                if (flushImmediately) {
-                    w.flush()
+            writeMutex.withLock {
+                try {
+                    val w = writer ?: return@withLock Result.failure(IOException("Not connected"))
+                    w.write(message)
+                    if (flushImmediately) {
+                        w.flush()
+                    }
+                    Result.success(Unit)
+                } catch (e: Exception) {
+                    handleDisconnect()
+                    Result.failure(e)
                 }
-                Result.success(Unit)
-            } catch (e: Exception) {
-                handleDisconnect()
-                Result.failure(e)
             }
         }
 
@@ -148,11 +156,16 @@ class TcpSocketClient @Inject constructor(
     }
 
     private fun handleDisconnect() {
-        if (_connectionState.value == ConnectionState.CONNECTED) {
-            _connectionState.value = ConnectionState.DISCONNECTED
-            _latencyMs.value = -1L
-            pingJob?.cancel()
-            readJob?.cancel()
+        if (_connectionState.value != ConnectionState.CONNECTED) return
+
+        _connectionState.value = ConnectionState.DISCONNECTED
+        _latencyMs.value = -1L
+        pingJob?.cancel()
+        readJob?.cancel()
+
+        val coroutineScope = scope ?: return
+        coroutineScope.launch(ioDispatcher) {
+            disconnectInternal(notify = false)
             scheduleReconnect()
         }
     }
@@ -203,11 +216,12 @@ class TcpSocketClient @Inject constructor(
                         _latencyMs.value = System.currentTimeMillis() - pendingPingTime
                     }
                 }
+                handleDisconnect()
+            } catch (e: CancellationException) {
+                throw e
             } catch (_: SocketException) {
-                // Connection closed
+                handleDisconnect()
             } catch (_: IOException) {
-                // Read error
-            } finally {
                 handleDisconnect()
             }
         }

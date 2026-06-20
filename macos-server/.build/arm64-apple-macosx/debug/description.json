@@ -1,0 +1,336 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.MobileGameControllerMac-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources",
+      "importPath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "MobileGameControllerMac",
+      "moduleOutputPath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule",
+      "objects" : [
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "MobileGameControllerMac_main",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macos_server"
+      ],
+      "outputFileMapPath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules/MobileGameControllerMac.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift",
+        "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift"
+      ],
+      "tempsPath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "MobileGameControllerMac" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "MobileGameControllerMac",
+      "-package-name",
+      "macos_server",
+      "-c",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift",
+      "-I",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "MobileGameControllerMac_main",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macos_server",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "MobileGameControllerMac" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac-entitlement.plist"
+    },
+    "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/sources"
+    },
+    "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.product/Objects.LinkFileList"
+    },
+    "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

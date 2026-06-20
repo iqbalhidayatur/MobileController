@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nefarius.ViGEm.Client" Version="1.21.256" />
+    <ProjectReference Include="..\MobileGameController.Core\MobileGameController.Core.csproj" />
   </ItemGroup>
 
 </Project>

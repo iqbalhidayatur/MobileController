@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/primary.swiftdeps"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ContentView.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ContentView.dia"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ControllerTcpServer.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ControllerTcpServer.dia"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/KeyboardControllerManager.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/KeyboardControllerManager.dia"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/MobileGameControllerMacApp.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/MobileGameControllerMacApp.dia"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/Models.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/Models.dia"
+  },
+  "/Users/apple/Documents/GitHub/MobileController/macos-server/Sources/MobileGameControllerMac/ServerHost.swift": {
+    "dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.d",
+    "object": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swift.o",
+    "swiftmodule": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost~partial.swiftmodule",
+    "swift-dependencies": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.swiftdeps",
+    "diagnostics": "/Users/apple/Documents/GitHub/MobileController/macos-server/.build/arm64-apple-macosx/debug/MobileGameControllerMac.build/ServerHost.dia"
+  }
+}

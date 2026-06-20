@@ -1,10 +1,10 @@
-using System.Net;
 using System.Net.Sockets;
+using MobileGameController.Core;
 
 namespace MobileGameControllerServer;
 
 /// <summary>
-/// Entry point for the Windows PC server.
+/// Console entry point for the Windows PC server.
 /// Requires ViGEmBus driver to be installed.
 /// </summary>
 class Program
@@ -22,24 +22,21 @@ class Program
             port = customPort;
         }
 
-        // Print local IP addresses for easy Android connection setup
         PrintLocalAddresses(port);
 
-        VirtualControllerManager? controllerManager = null;
-        ControllerTcpServer? server = null;
+        using var host = new ServerHost();
+        host.LogMessage += message => Console.WriteLine($"[Server] {message}");
 
         Console.CancelKeyPress += (_, e) =>
         {
             e.Cancel = true;
             Console.WriteLine("\n[Server] Shutting down...");
-            server?.Stop();
+            _ = host.StopAsync();
         };
 
         try
         {
-            controllerManager = new VirtualControllerManager();
-            server = new ControllerTcpServer(controllerManager);
-            await server.StartAsync(port);
+            await host.StartAsync(port);
         }
         catch (Exception ex) when (ex.Message.Contains("ViGEm") || ex.GetType().Name.Contains("ViGEm"))
         {
@@ -61,11 +58,6 @@ class Program
             Console.WriteLine($"\n[ERROR] {ex.Message}");
             Console.ResetColor();
         }
-        finally
-        {
-            server?.Dispose();
-            controllerManager?.Dispose();
-        }
 
         Console.WriteLine("[Server] Press any key to exit...");
         Console.ReadKey();
@@ -85,14 +77,11 @@ class Program
     static void PrintLocalAddresses(int port)
     {
         Console.WriteLine("\n[INFO] Connect your Android app to one of these addresses:\n");
-        foreach (var ip in Dns.GetHostAddresses(Dns.GetHostName()))
+        foreach (var ip in NetworkHelper.GetLocalIPv4Addresses())
         {
-            if (ip.AddressFamily == AddressFamily.InterNetwork)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"  → {ip}:{port}");
-                Console.ResetColor();
-            }
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"  → {ip}:{port}");
+            Console.ResetColor();
         }
         Console.WriteLine();
     }
